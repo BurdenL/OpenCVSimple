@@ -45,7 +45,7 @@ public class FaceDetectActivity extends CameraActivity implements CvCameraViewLi
     private Mat mBgr;
     private Mat mBgrScaled;
     private Size mInputSize = null;
-    private float mScale = 2.f;
+    private final float mScale = 2.f;
     private MatOfByte mModelBuffer;
     private MatOfByte mConfigBuffer;
     private FaceDetectorYN mFaceDetector;
@@ -91,7 +91,6 @@ public class FaceDetectActivity extends CameraActivity implements CvCameraViewLi
             int bytesRead = is.read(buffer);
             is.close();
         } catch (IOException e) {
-            e.printStackTrace();
             Log.e(TAG, "Failed to ONNX model from resources! Exception thrown: " + e);
             (Toast.makeText(this, "Failed to ONNX model from resources!", Toast.LENGTH_LONG)).show();
             return;
@@ -113,11 +112,11 @@ public class FaceDetectActivity extends CameraActivity implements CvCameraViewLi
 
         setContentView(R.layout.face_detect_surface_view);
 
-        mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.fd_activity_surface_view);
+        mOpenCvCameraView = findViewById(R.id.fd_activity_surface_view);
         mOpenCvCameraView.setVisibility(CameraBridgeViewBase.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
 
-        switchCameraBtn = ((Button) findViewById(R.id.switchCameraBtn));
+        switchCameraBtn = findViewById(R.id.switchCameraBtn);
 
         // 设置拖动逻辑
 //        switchCameraBtn.setOnTouchListener(new View.OnTouchListener() {
