@@ -257,5 +257,4 @@ public class FaceDetectActivity extends CameraActivity implements CvCameraViewLi
     }
 
 
-
 }
