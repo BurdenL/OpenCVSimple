@@ -26,5 +26,5 @@ android {
 }
 
 dependencies {
-        implementation libs.opencv
+    implementation libs.opencv
 }

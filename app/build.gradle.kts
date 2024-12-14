@@ -33,7 +33,7 @@ android {
 
 dependencies {
 
-    implementation("org.opencv:opencv:4.10.0")
+    implementation(libs.opencv)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)

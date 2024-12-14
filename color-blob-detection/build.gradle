@@ -28,6 +28,6 @@ android {
 dependencies {
     //implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-        implementation libs.opencv
+    implementation libs.opencv
 
 }
