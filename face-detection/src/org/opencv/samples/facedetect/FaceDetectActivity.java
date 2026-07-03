@@ -67,7 +67,7 @@ public class FaceDetectActivity extends CameraActivity implements CvCameraViewLi
     /**
      * Called when the activity is first created.
      */
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint({"MissingInflatedId", "ClickableViewAccessibility"})
     @Override
     public void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "called onCreate");
@@ -120,6 +120,7 @@ public class FaceDetectActivity extends CameraActivity implements CvCameraViewLi
 
         // 设置拖动逻辑
 //        switchCameraBtn.setOnTouchListener(new View.OnTouchListener() {
+//            @SuppressLint("ClickableViewAccessibility")
 //            @Override
 //            public boolean onTouch(View view, MotionEvent event) {
 //                switch (event.getActionMasked()) {
